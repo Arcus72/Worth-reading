@@ -146,13 +146,6 @@ export const StyledFilterBtn = styled.button`
   cursor: pointer;
 `;
 
-const StyledMessage = styled.div`
-  ${ArticleHeaderTextSize(1.8)}
-  margin:1rem auto;
-  text-align: center;
-  color: gray;
-`;
-
 interface Author {
   name: string;
 }
@@ -286,18 +279,14 @@ const Books = ({ books, categories, amountOfBooks, query }: Props) => {
           <StyledFilterBtn onClick={() => updateUrlQuery()}>Use filter</StyledFilterBtn>
         </StyledFilter>
 
-        {amountOfBooks != 0 ? (
-          <StyledBooksContainer>
-            <Catalog data={rebuildedBooks} />
-            <CatalogNavigation
-              amountOfPages={Math.ceil(amountOfBooks / 4)}
-              currentPage={currentPage}
-              changePage={updatePageNumber}
-            />
-          </StyledBooksContainer>
-        ) : (
-          <StyledMessage>Nothing found</StyledMessage>
-        )}
+        <StyledBooksContainer>
+          <Catalog
+            amountOfPages={Math.ceil(amountOfBooks / 4)}
+            currentPage={currentPage}
+            changePage={updatePageNumber}
+            data={rebuildedBooks}
+          />
+        </StyledBooksContainer>
       </StyledContainer>
     </>
   );

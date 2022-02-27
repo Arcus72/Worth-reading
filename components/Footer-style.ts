@@ -32,6 +32,11 @@ export const StyledSocialIcon = styled.div`
   position: relative;
   z-index: 1;
   overflow: hidden;
+
+  svg {
+    width: 32px;
+    height: 32px;
+  }
   &::before {
     z-index: -1;
     content: '';

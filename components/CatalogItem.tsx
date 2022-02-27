@@ -1,3 +1,5 @@
+import Link from 'next/link';
+import React from 'react';
 import styled from 'styled-components';
 import { ArticleHeaderTextSize, NormalTextSize } from '@style/fontType';
 
@@ -52,3 +54,39 @@ export const StyledLinkBtn = styled.button`
     letter-spacing: 5px;
   }
 `;
+
+interface DataForCatalog {
+  image: string;
+  title: string;
+  info: (string | number)[][];
+  link: string;
+  btnName: string;
+}
+
+interface Props {
+  data: DataForCatalog;
+}
+
+function CatalogItem({ data }: Props) {
+  return (
+    <StyledEntry>
+      <StyledPortrait src={data.image} alt={data.title} />
+
+      <StyledDescriptionWrapper>
+        <div>
+          <StyledTitle>{data.title}</StyledTitle>
+          {data.info.map((description, index: number) => (
+            <StyledDescription key={index}>
+              {description[0]}: {description[1]}
+            </StyledDescription>
+          ))}
+        </div>
+        <Link passHref href={data.link}>
+          <StyledLinkBtn>{data.btnName}</StyledLinkBtn>
+        </Link>
+      </StyledDescriptionWrapper>
+    </StyledEntry>
+  );
+}
+
+export default CatalogItem;

@@ -99,11 +99,6 @@ const StyledSearchInput = styled.input`
   margin-right: 1rem;
 `;
 
-const StyledAuthorsContainer = styled.div`
-  font-size: 3rem;
-  margin-left: 2rem;
-`;
-
 const StyledAlfabet = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -131,13 +126,6 @@ const StyledLetterTile = styled.span`
   align-items: center;
   cursor: pointer;
   background-color: ${(props: P) => (props.isSelected ? '#f1c40f' : props.theme.colors.main)};
-`;
-
-const StyledMessage = styled.div`
-  ${ArticleHeaderTextSize(1.8)}
-  margin:1rem auto;
-  text-align: center;
-  color: gray;
 `;
 
 interface Props {
@@ -263,18 +251,13 @@ function Index({ authors, query, amountOfAuthors }: Props) {
 
           <StyledFilterBtn onClick={() => updateUrlQuery()}>Use filter</StyledFilterBtn>
         </StyledFilter>
-        {amountOfAuthors != 0 ? (
-          <StyledAuthorsContainer>
-            <Catalog data={rebuildedAuthors} />
-            <CatalogNavigation
-              amountOfPages={Math.ceil(amountOfAuthors / 4)}
-              currentPage={currentPage}
-              changePage={updatePageNumber}
-            />
-          </StyledAuthorsContainer>
-        ) : (
-          <StyledMessage>Nothing found</StyledMessage>
-        )}
+
+        <Catalog
+          data={rebuildedAuthors}
+          amountOfPages={Math.ceil(amountOfAuthors / 4)}
+          currentPage={currentPage}
+          changePage={updatePageNumber}
+        />
       </StyledContainer>
     </>
   );

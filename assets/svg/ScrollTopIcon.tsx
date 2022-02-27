@@ -1,13 +1,8 @@
 import React from 'react';
 
-interface Props {
-  width: string;
-  height: string;
-}
-
-function ScrollTopIcon({ width, height }: Props) {
+function ScrollTopIcon() {
   return (
-    <svg width={width} height={height} viewBox='0 0 111 90' fill='none' xmlns='http://www.w3.org/2000/svg'>
+    <svg viewBox='0 0 111 90' fill='none' xmlns='http://www.w3.org/2000/svg'>
       <path
         d='M51.6231 4.48796L48.1468 0.894116L41.1033 7.99267L44.5796 11.5865L51.6231 4.48796ZM87.4781 55.9361C89.398 57.921 92.5311 57.9409 94.4761 55.9807C96.4211 54.0205 96.4415 50.8224 94.5216 48.8376L87.4781 55.9361ZM44.5796 11.5865L87.4781 55.9361L94.5216 48.8376L51.6231 4.48796L44.5796 11.5865Z'
         fill='white'

@@ -40,17 +40,17 @@ function Footer() {
       <StyledIconList>
         <StyledSocialIcon>
           <a href='https://www.facebook.com/'>
-            <FacebookIcon width='32' height='32' />
+            <FacebookIcon />
           </a>
         </StyledSocialIcon>
         <StyledSocialIcon>
           <a href='https://www.youtube.com/'>
-            <YoutubeIcon width='32' height='32' />
+            <YoutubeIcon />
           </a>
         </StyledSocialIcon>
         <StyledSocialIcon>
           <a href='https://twitter.com'>
-            <TwitterIcon width='32' height='32' />
+            <TwitterIcon />
           </a>
         </StyledSocialIcon>
       </StyledIconList>

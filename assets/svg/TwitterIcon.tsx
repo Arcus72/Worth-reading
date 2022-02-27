@@ -1,13 +1,8 @@
 import React from 'react';
 
-interface Props {
-  width: string;
-  height: string;
-}
-
-function TwitterIcon({ width, height }: Props) {
+function TwitterIcon() {
   return (
-    <svg fill='#ffffff' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 95 95' width={width + 'px'} height={height + 'px'}>
+    <svg fill='#ffffff' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 95 95'>
       <path
         d='M88.5,26.12c-2.833,1.256-5.877,2.105-9.073,2.486c3.261-1.955,5.767-5.051,6.945-8.738
 	c-3.052,1.81-6.434,3.126-10.031,3.832c-2.881-3.068-6.987-4.988-11.531-4.988c-8.724,0-15.798,7.072-15.798,15.798

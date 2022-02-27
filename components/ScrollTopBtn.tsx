@@ -14,17 +14,12 @@ const StyledWrapper = styled.div<WrapperProps>`
   width: 60px;
   height: 80px;
   display: ${(props) => (props.isBtnVisible ? 'block' : 'none')};
-`;
 
-const scrollTop = () => {
-  let i = 0;
-  for (let j = window.scrollY; j > 0; j -= 20) {
-    i++;
-    setTimeout(() => {
-      window.scrollTo(0, j);
-    }, 2 * i);
+  svg {
+    width: 60px;
+    height: 80px;
   }
-};
+`;
 
 function ScrollTopBtn() {
   const [isBtnVisible, setIsBtnVisible] = useState(false);
@@ -39,9 +34,11 @@ function ScrollTopBtn() {
     });
   }, []);
 
+  const scrollTop = () => document.body.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
   return (
-    <StyledWrapper onClick={scrollTop} isBtnVisible={isBtnVisible}>
-      <ScrollTopIcon width='60' height='80' />
+    <StyledWrapper onClick={() => scrollTop()} isBtnVisible={isBtnVisible}>
+      <ScrollTopIcon />
     </StyledWrapper>
   );
 }
