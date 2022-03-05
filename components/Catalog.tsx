@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import CatalogItem from './CatalogItem';
 import styled from 'styled-components';
-import { ArticleHeaderTextSize } from '@style/fontType';
+import { ArticleHeaderTextSize } from '@style/zmienneCss';
 import CatalogNavigation from '@comp/CatalogNavigation';
 
 export interface DataForCatalog {
@@ -22,9 +22,7 @@ const StyledMessage = styled.div`
 const StyledWrapper = styled.div`
   font-size: 3rem;
   margin-left: 2rem;
-  @media (min-width: 700px) {
-    width: 65%;
-  }
+  height: fit-content;
 `;
 
 interface Props {
@@ -35,14 +33,17 @@ interface Props {
 }
 
 function Catalog({ data, amountOfPages, currentPage, changePage }: Props) {
+  if (data === undefined) data = [];
   return (
     <StyledWrapper>
-      {data?.length ? (
+      {data.length ? (
         <div>
           {data.map((item) => (
             <CatalogItem key={item.title} data={item} />
           ))}
-          <CatalogNavigation amountOfPages={amountOfPages} currentPage={currentPage} changePage={changePage} />
+          {amountOfPages !== 1 && (
+            <CatalogNavigation amountOfPages={amountOfPages} currentPage={currentPage} changePage={changePage} />
+          )}
         </div>
       ) : (
         <StyledMessage>Nothing found</StyledMessage>

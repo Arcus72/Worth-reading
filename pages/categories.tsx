@@ -4,7 +4,7 @@ import { GraphQLClient } from 'graphql-request';
 import Link from 'next/link';
 import PageHeader from '@comp/PageHeader';
 import styled from 'styled-components';
-import { ArticleHeaderTextSize, NormalTextSize } from '@style/fontType';
+import { ArticleHeaderTextSize, NormalTextSize } from '@style/zmienneCss';
 
 const StyledCategoryTileContainer = styled.div`
   display: flex;

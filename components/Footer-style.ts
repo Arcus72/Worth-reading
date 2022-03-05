@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { NormalTextSize, ArticleHeaderTextSize } from '@style/fontType';
+import { NormalTextSize, ArticleHeaderTextSize } from '@style/zmienneCss';
 
 export const StyledWrapper = styled.div`
   background: #2c3e50;

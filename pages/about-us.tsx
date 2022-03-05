@@ -2,7 +2,7 @@ import React from 'react';
 import CustomHead from '@comp/CustomPageTitle';
 import PageHeader from '@comp/PageHeader';
 import styled from 'styled-components';
-import { ArticleHeaderTextSize, NormalTextSize } from '@style/fontType';
+import { ArticleHeaderTextSize, NormalTextSize } from '@style/zmienneCss';
 
 const StyledContainer = styled.div`
   width: 88%;

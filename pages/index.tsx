@@ -4,8 +4,7 @@ import { GraphQLClient } from 'graphql-request';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
-import { ArticleHeaderTextSize, NormalTextSize } from '@style/fontType';
-import CatalogNavigation from '@comp/CatalogNavigation';
+import { ArticleHeaderTextSize, buttonAnimation, NormalTextSize } from '@style/zmienneCss';
 
 export const getServerSideProps = async ({ query }: Props) => {
   //TODO: filter for categories doesn't work
@@ -16,11 +15,11 @@ export const getServerSideProps = async ({ query }: Props) => {
   try {
     const res1 = await graphCMS.request(`
     {
-      books(first: 4, skip: ${((query.page || 1) - 1) * 4},where: {title_contains: "${
+      books(
+      where: {authors_some: {name_contains: "${query.author || ''}"}, title_contains: "${
       query.title || ''
-    }", AND: {authors_some: {name_contains: "${query.author || ''}", AND: {categories_some: {name_contains: "${
-      query.category || ''
-    }"}}}}}){
+    }", categories_some: {name_contains: "${query.category || ''}"}}
+    ){
         title
       }
     }
@@ -30,11 +29,13 @@ export const getServerSideProps = async ({ query }: Props) => {
 
     const res2 = await graphCMS.request(`
   {
-    books(first: 4, skip: ${((query.page || 1) - 1) * 4},where: {title_contains: "${
+
+
+    books(first: 4, skip: ${((query.page || 1) - 1) * 4},
+      where: {authors_some: {name_contains: "${query.author || ''}"}, title_contains: "${
       query.title || ''
-    }", AND: {authors_some: {name_contains: "${query.author || ''}", AND: {categories_some: {name_contains: "${
-      query.category || ''
-    }"}}}}}){
+    }", categories_some: {name_contains: "${query.category || ''}"}}
+    ) {
       image {
         url(transformation: {document: {output: {format: jpg}}})
       }
@@ -144,6 +145,7 @@ export const StyledFilterBtn = styled.button`
   padding: 0.5rem 1rem;
   font-size: 1.5rem;
   cursor: pointer;
+  ${buttonAnimation()}
 `;
 
 interface Author {

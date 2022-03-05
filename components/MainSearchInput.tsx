@@ -1,7 +1,7 @@
 import CrossIcon from '@assets/svg/CrossIcon';
 import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
-import { NormalTextSize } from '@style/fontType';
+import styled, { keyframes } from 'styled-components';
+import { NormalTextSize } from '@style/zmienneCss';
 import Link from 'next/link';
 import { GraphQLClient } from 'graphql-request';
 const StyledWrapper = styled.div`
@@ -98,6 +98,50 @@ const StyledLine = styled.div`
   margin: 1rem;
 `;
 
+const AnimatedLoader = keyframes`
+  0% {
+    top: 8px;
+    height: 64px;
+  }
+  50%{
+    top: 24px;
+    height: 32px;
+  }
+  100% {
+    top: 24px;
+    height: 32px;
+  }
+`;
+
+const StyledLoader = styled.div`
+  display: block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+
+  & div {
+    display: inline-block;
+    position: absolute;
+
+    width: 10px;
+    background: #fff;
+    animation: ${AnimatedLoader} 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+  }
+  div:nth-child(1) {
+    left: 6px;
+    animation-delay: -0.24s;
+  }
+  div:nth-child(2) {
+    left: 28px;
+    animation-delay: -0.12s;
+  }
+  div:nth-child(3) {
+    left: 48px;
+    animation-delay: 0;
+  }
+`;
+
 interface Author {
   name: string;
 }
@@ -109,10 +153,12 @@ interface Book {
 function MainSearchInput() {
   const [graphCMS] = useState(new GraphQLClient(String(process.env.NEXT_PUBLIC_GRAPHQL_URL_ENDPOINT)));
   const [inputValue, setInputValue] = useState('');
+  const [isLoaderVisible, setIsLoaderVisible] = useState(false);
   const [foundBooks, setFoundBooks] = useState<Book[]>([]);
   const [foundAuthors, setFoundAuthors] = useState<Author[]>([]);
 
   useEffect(() => {
+    setIsLoaderVisible(true);
     const fetchMyApi = async () => {
       try {
         const { books, authors } = await graphCMS.request(`
@@ -125,6 +171,8 @@ function MainSearchInput() {
         }
       }
     `);
+
+        setIsLoaderVisible(false);
         setFoundAuthors(authors);
         setFoundBooks(books);
       } catch (error) {
@@ -133,6 +181,8 @@ function MainSearchInput() {
     };
 
     if (inputValue) {
+      setFoundAuthors([]);
+      setFoundBooks([]);
       fetchMyApi();
     }
   }, [graphCMS, inputValue]);
@@ -151,6 +201,14 @@ function MainSearchInput() {
       </StyledCrossField>
 
       <StyledSearchResults isVisible={!!inputValue}>
+        {isLoaderVisible && (
+          <StyledLoader>
+            <div></div>
+            <div></div>
+            <div></div>
+          </StyledLoader>
+        )}
+
         {foundBooks.length != 0 && (
           <>
             <StyledDataListHeader> Books:</StyledDataListHeader>

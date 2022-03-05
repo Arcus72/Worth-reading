@@ -2,7 +2,7 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import styled from 'styled-components';
-import { NormalTextSize } from '@style/fontType';
+import { NormalTextSize } from '@style/zmienneCss';
 
 const StyledWrapper = styled.div`
   margin-top: 0.5rem;

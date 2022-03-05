@@ -1,9 +1,15 @@
 import Link from 'next/link';
 import React from 'react';
 import styled from 'styled-components';
-import { ArticleHeaderTextSize, NormalTextSize } from '@style/fontType';
+import { ArticleHeaderTextSize, NormalTextSize, buttonAnimation } from '@style/zmienneCss';
 
-export const StyledPortrait = styled.img`
+const StyledWrapper = styled.div`
+  display: flex;
+  margin-bottom: 2rem;
+  height: 100%;
+`;
+
+const StyledPortrait = styled.img`
   height: 230px;
   width: 150px;
   @media (min-width: 700px) {
@@ -12,17 +18,12 @@ export const StyledPortrait = styled.img`
   }
 `;
 
-export const StyledEntry = styled.div`
-  display: flex;
-  margin-bottom: 2rem;
-`;
-
-export const StyledDescription = styled.div`
+const StyledDescription = styled.div`
   margin-left: 1rem;
   ${NormalTextSize(1.6)}
 `;
 
-export const StyledDescriptionWrapper = styled.div`
+const StyledDescriptionWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -30,7 +31,7 @@ export const StyledDescriptionWrapper = styled.div`
   width: 100%;
 `;
 
-export const StyledTitle = styled.h2`
+const StyledTitle = styled.h2`
   white-space: nowrap;
   overflow: hidden !important;
   text-overflow: ellipsis;
@@ -39,7 +40,7 @@ export const StyledTitle = styled.h2`
   ${ArticleHeaderTextSize(2)}
 `;
 
-export const StyledLinkBtn = styled.button`
+const StyledLinkBtn = styled.button`
   background: white;
   border: 2px solid ${(props) => props.theme.colors.main};
   text-align: center;
@@ -48,11 +49,8 @@ export const StyledLinkBtn = styled.button`
   margin: 0px auto;
   margin-bottom: 2rem;
   cursor: pointer;
+  ${buttonAnimation()}
   ${NormalTextSize()}
-  transition: letter-spacing 0.5s;
-  &:hover {
-    letter-spacing: 5px;
-  }
 `;
 
 interface DataForCatalog {
@@ -69,7 +67,7 @@ interface Props {
 
 function CatalogItem({ data }: Props) {
   return (
-    <StyledEntry>
+    <StyledWrapper>
       <StyledPortrait src={data.image} alt={data.title} />
 
       <StyledDescriptionWrapper>
@@ -85,7 +83,7 @@ function CatalogItem({ data }: Props) {
           <StyledLinkBtn>{data.btnName}</StyledLinkBtn>
         </Link>
       </StyledDescriptionWrapper>
-    </StyledEntry>
+    </StyledWrapper>
   );
 }
 

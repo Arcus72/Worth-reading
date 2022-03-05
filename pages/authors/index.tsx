@@ -8,7 +8,7 @@ import React, { useEffect, useState } from 'react';
 import CatalogNavigation from '@comp/CatalogNavigation';
 
 import styled from 'styled-components';
-import { NormalTextSize, ArticleHeaderTextSize } from '@style/fontType';
+import { NormalTextSize, ArticleHeaderTextSize, buttonAnimation } from '@style/zmienneCss';
 
 export const getServerSideProps = async ({ query }: Props) => {
   const graphCMS = new GraphQLClient(String(process.env.NEXT_PUBLIC_GRAPHQL_URL_ENDPOINT));
@@ -16,8 +16,10 @@ export const getServerSideProps = async ({ query }: Props) => {
   let authors = [];
   try {
     const res = await graphCMS.request(`
+
+
   query AuthorArr{
-    authors(where: {name_starts_with: "${query.starts || ''}", AND: {name_contains: "${query.contains || ''}"}}) {
+    authors(where: {name_starts_with: "${query.starts || ''}", name_contains: "${query.contains || ''}"}){
       name
     }
   }
@@ -26,9 +28,10 @@ export const getServerSideProps = async ({ query }: Props) => {
 
     const res2 = await graphCMS.request(`
   query Authors{
-    authors(first: 4, skip: ${((query.page || 1) - 1) * 4}, where: {name_starts_with: "${
-      query.starts || ''
-    }", AND: {name_contains: "${query.contains || ''}"}}) {
+    authors(first: 4, skip: ${((query.page || 1) - 1) * 4}, where: {name_starts_with: "${query.starts || ''}", name_contains: "${
+      query.contains || ''
+    }"})
+     {
       name
       image {
         url(transformation: {document: {output: {format: jpg}}})
@@ -71,6 +74,7 @@ const StyledFilterBtn = styled.button`
   padding: 0.5rem 1rem;
   font-size: 1.5rem;
   cursor: pointer;
+  ${buttonAnimation()}
 `;
 
 const StyledFilter = styled.div`

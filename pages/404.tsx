@@ -2,7 +2,7 @@ import React from 'react';
 import NotFoundSVG from '@assets/svg/NotFoundSVG';
 import styled from 'styled-components';
 import Link from 'next/link';
-import { NormalTextSize } from '@style/fontType';
+import { NormalTextSize } from '@style/zmienneCss';
 const StyledWrapper = styled.div`
   display: flex;
   align-items: center;

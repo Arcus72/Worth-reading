@@ -39,14 +39,14 @@ function Navbar() {
           <StyledListItem className={router.pathname == '/' ? ' active' : ''} onClick={() => setIsMenuActive(false)}>
             <Link href='/'>Books</Link>
           </StyledListItem>
-          <StyledListItem className={router.pathname == '/addBook' ? ' active' : ''} onClick={() => setIsMenuActive(false)}>
-            <Link href='/addBook'>Add book</Link>
-          </StyledListItem>
           <StyledListItem className={router.pathname == '/categories' ? ' active' : ''} onClick={() => setIsMenuActive(false)}>
             <Link href='/categories'>Categories</Link>
           </StyledListItem>
           <StyledListItem className={router.pathname == '/authors' ? ' active' : ''} onClick={() => setIsMenuActive(false)}>
             <Link href='/authors'>Authors</Link>
+          </StyledListItem>
+          <StyledListItem className={router.pathname == '/addBook' ? ' active' : ''} onClick={() => setIsMenuActive(false)}>
+            <Link href='/addBook'>Add book</Link>
           </StyledListItem>
           <StyledListItem className={router.pathname == '/about-us' ? ' active' : ''} onClick={() => setIsMenuActive(false)}>
             <Link href='/about-us'>About us</Link>

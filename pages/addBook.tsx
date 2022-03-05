@@ -5,7 +5,7 @@ import PageHeader from '@comp/PageHeader';
 import { useFormik as UseFormik } from 'formik';
 
 import Link from 'next/link';
-import { NormalTextSize, ArticleHeaderTextSize } from '@style/fontType';
+import { NormalTextSize, ArticleHeaderTextSize, buttonAnimation } from '@style/zmienneCss';
 import styled from 'styled-components';
 import * as Yup from 'yup';
 const StyledContainer = styled.div`
@@ -135,7 +135,8 @@ const StyledSendBtn = styled.button`
   width: 40%;
   margin-bottom: 2rem;
   cursor: pointer;
-  ${NormalTextSize(2)}
+  ${NormalTextSize(2)};
+  ${buttonAnimation()};
   transition: letter-spacing 0.5s;
   &:hover {
     letter-spacing: 5px;

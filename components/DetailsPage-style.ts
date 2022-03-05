@@ -1,4 +1,4 @@
-import { NormalTextSize, ArticleHeaderTextSize } from '@style/fontType';
+import { NormalTextSize, ArticleHeaderTextSize } from '@style/zmienneCss';
 import styled from 'styled-components';
 import prismBackground from '@assets/img/prism.png';
 export const StyledWrapper = styled.div`

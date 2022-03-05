@@ -7,7 +7,6 @@ export const StyledWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  overflow-x: hidden;
 `;
 
 export const StyledHeader = styled.div`
