@@ -135,9 +135,9 @@ function categories({ categories }: Props) {
       <PageHeader title='Categories' />
       <StyledContainer>
         <StyledPageDescription>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima neque voluptates a! Saepe sequi ea iure, quis fugit ab
-          totam placeat odit quibusdam! Modi distinctio ipsam placeat hic consequuntur perspiciatis culpa voluptate laboriosam in
-          ipsum eius libero amet quod, ex exercitationem id. Ipsa tenetur officia totam pariatur quaerat quisquam quidem!
+          Do you have a favorite type of book, either fiction or nonfiction? Are you thinking about branching out and enjoying a
+          new genre? If so, a list of book types or genres can help you choose what to read next. See if any of the below subtypes
+          catch your eye.
         </StyledPageDescription>
         <StyledCategoryTileContainer>
           {categories.map((category) => (

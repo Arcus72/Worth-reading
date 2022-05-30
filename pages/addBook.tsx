@@ -242,12 +242,8 @@ function addBook() {
       <PageHeader title='Add book' />
       <StyledContainer>
         <StyledPageDescription>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc facilisis placerat dolor, in semper lectus. Maecenas eu
-          lectus quis augue placerat volutpat quis vitae arcu. Sed in feugiat nunc, a commodo urna. In viverra dignissim interdum.
-          Nam ullamcorper erat vel quam elementum, ut imperdiet ex cursus. Curabitur venenatis sapien ex, eleifend pellentesque
-          lorem interdum a. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vestibulum et
-          rhoncus dolor. Cras nec lorem sit amet lorem commodo pretium. Sed pulvinar fermentum vulputate. Nullam ultrices metus
-          eget leo dapibus, at imperdiet libero laoreet.
+          If you can&apos;t find your favorite book, you can inform us. Only thing you need to do is complete form and we promise
+          to add your book to our set.
         </StyledPageDescription>
         <StyledFormHeader>Complete form:</StyledFormHeader>
         <StyledFrom ref={formRef} onSubmit={formik.handleSubmit}>

@@ -33,16 +33,8 @@ function aboutUs() {
       <PageHeader title='About Us' />
       <StyledContainer>
         <PageDescription>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias totam unde quaerat minus. Repellendus voluptatibus
-          quisquam voluptas magnam? Assumenda cum, harum commodi quas repellendus consequatur aspernatur veniam deserunt
-          accusantium exercitationem molestiae consectetur, saepe odit. Temporibus, suscipit praesentium rerum blanditiis ea sunt
-          dolor quas, fugiat ad aliquam natus incidunt! Sunt repudiandae consequuntur, consequatur pariatur quidem eum cumque
-          ipsam nisi iste assumenda hic vero fugit modi, nihil libero voluptatibus quas! Quibusdam quam dolorem
-          <br /> <br />
-          nemo repellendus explicabo rerum nesciunt fugit possimus laborum impedit. Maxime voluptates nihil recusandae dolor
-          incidunt voluptatem error expedita quisquam beatae? Ipsa iusto est error. Esse voluptas rem alias corrupti deleniti
-          <br /> <br />
-          pariatur impedit distinctio aut, quia et rerum, hic fugiat magnam doloremque reprehenderit.
+          Worth-reading is the world’s largest site for readers and book recommendations. Our mission is to help people find and
+          share books they love. Worth-reading launched in May 2022.
         </PageDescription>
         <StyledContactContainer>
           <StyledContactHeader>KONTAKT:</StyledContactHeader>

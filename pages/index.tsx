@@ -243,15 +243,10 @@ const Books = ({ books, categories, amountOfBooks, query }: Props) => {
     <>
       <CustomHead title='Books' />
       <article>
-        <StyledArticleHeader>Lorem ipsum</StyledArticleHeader>
+        <StyledArticleHeader>Books</StyledArticleHeader>
         <StyledArticleDescription>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate aut quis nemo consectetur, iure repellat omnis eius
-          dicta qui voluptates laborum, nisi, quos saepe incidunt nam itaque facere corrupti voluptatibus sit quae ut! Laboriosam,
-          molestiae minus! Praesentium, voluptatum velit consequuntur repellendus a voluptas repudiandae rem enim modi incidunt
-          doloribus eligendi ex vero quo nisi maiores? Qui quidem dolorem at ipsa reprehenderit veniam aut, iste modi natus.
-          Facere excepturi recusandae voluptatibus, provident laborum aliquam iusto consequatur dolorem dicta ullam culpa
-          consectetur mollitia, ab delectus fugit nisi distinctio placeat, modi dignissimos qui optio. Temporibus excepturi soluta
-          a, laborum expedita incidunt natus illum?
+          Worth-reading is that site where you can find your next favorite book. And on this journey with your friends you can
+          explore new territory, gather information, and expand your mind.
         </StyledArticleDescription>
       </article>
       <StyledContainer>
