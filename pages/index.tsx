@@ -7,7 +7,6 @@ import styled from 'styled-components';
 import { ArticleHeaderTextSize, buttonAnimation, NormalTextSize } from '@style/zmienneCss';
 
 export const getServerSideProps = async ({ query }: Props) => {
-  //TODO: filter for categories doesn't work
   const graphCMS = new GraphQLClient(String(process.env.NEXT_PUBLIC_GRAPHQL_URL_ENDPOINT));
   let books: any[] = [];
   let categories = [];

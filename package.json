@@ -6,6 +6,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+      "export": "next export",
     "prettier": "npx prettier --write .",
     "lint:css": "stylelint './src/**/*.tsx'"
   },
